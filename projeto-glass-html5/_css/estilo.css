@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body {
+    background-color: white;
+    color: rgba(0, 0, 0, 1);
+}
+p {                       
+    text-align: justify;
+    text-indent: 50px;
+}
+
+/* Assim que se faz comentários em CSS */
+/* Formatação de imagens com legendas */
+
+figure.foto-legenda {
+    position: relative; /* deixando relativa a legenda vai parar em cima da imagem, como queremos. posição relativa = ele vai ficar no local relativo ao código html, onde ele foi colocado no html, e dentro dele o figcaption vai ter uma posição absoluta, dentro do seu pai, que é o figure, e vai ficar na posição zero */
+    border: 8px solid white; /* borda da imagem */
+    box-shadow: 1px 1px 4px black; /* deslocamento horizontal, vertical, espalhamento e cor */
+}
+
+figure.foto-legenda img { 
+    width: 100%;
+    height: 100%; /* dixar assim para a imagem não vazar da borda */
+}
+
+figure.foto-legenda figcaption {
+    opacity: 0;
+    position: absolute; /* vai ter uma posição absoluta dentro do seu conteiner, ou seja, a borda branca. Posição absoluta com top 0, a legenda vai aparecer lá em cima. Como o objeto conteiner, que é o figure, n]ao estava a principio configurado com uma posição relativa, o título foi parar lá em cima. */
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.4); /* se colocar black ele vai ficar com uma faixa preta, pra criar uma transparência vamos usar a função rgba para preto, porém com uma transparência de 0.4 */
+    color: white; /* deixar a letra branca */
+    width: 100%;
+    height: 100%; /* faz a borda preta ocupar todo o espaço dentro da imagem */
+    padding: 10px; /* deixou um espaço maior para a legenda, porém ele transpassou a borda. para resolver isso vamos usar o box-sizing */
+    box-sizing: border-box; /* vai criar um boz dentro da borda */
+    transition: opacity 1s; /* para a opacidade levar um segundo para exibir ou esconder o conteúdo */
+}
+
+figure.foto-legenda:hover figcaption {
+    opacity: 1; /* com a opacity = 0, o texto va sumir, com o hober figcapition, quando eu passar o mouse por cima, a opacidade vai para 1, que é a opacidade de 100% e o texto aparecerá */
+}
