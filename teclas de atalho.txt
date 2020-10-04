@@ -1,0 +1,7 @@
+alt + shift + seta para baixo = duplicar linha
+ctrl + shift + k = excluir linha
+
+segura alt e seta para cima ou para baixo = mover uma linha
+tecla F2 = renomear elementos (ex: <p> para <h1>)
+ctrl + d até selecionar todos os elementos iguais e depois altera os mesmos
+
